@@ -1,0 +1,10 @@
+[Unit]
+Description=Hourly backup of %I
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+AccuracySec=1h
+
+[Install]
+WantedBy=timers.target

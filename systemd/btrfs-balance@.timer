@@ -1,0 +1,10 @@
+[Unit]
+Description=Weekly Btrfs balance on %f
+
+[Timer]
+OnCalendar=weekly
+AccuracySec=1d
+Persistent=true
+
+[Install]
+WantedBy=timers.target

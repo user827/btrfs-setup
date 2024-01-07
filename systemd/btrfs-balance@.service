@@ -1,0 +1,13 @@
+[Unit]
+Description=Btrfs balance on %f
+Before=btrfs-scrub@%i.service
+Before=btrfs-scrub-resume@%i.service
+
+[Service]
+Nice=19
+#IOSchedulingClass=idle
+ExecStart=/usr/lib/btrfs-setup/btrfs-balance.sh %f
+#ExecStop=/usr/lib/b-backup/btrfs-scrub-resume-stop.sh %f
+KillMode=mixed
+# so can be scheduled before scrub
+Type=oneshot

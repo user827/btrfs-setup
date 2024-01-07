@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup service on %I
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/btrbk -q run %I
