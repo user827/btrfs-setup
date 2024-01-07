@@ -1,0 +1,22 @@
+#!/bin/bash
+set -eu
+
+# Get the difference between the last and second to last backups.
+
+. /etc/big_backup.conf
+
+subvol=$1
+
+cd "$BTRFS_LOCAL_SNAPSHOTS"
+
+vols=("$subvol".*)
+if [ "${#vols[@]}" -lt 2 ]; then
+  echo "No two subvolumes found" >&2
+  exit 1
+fi
+
+printf "%s\n" "--- ${vols[-2]}"
+printf "%s\n" "+++ ${vols[-1]}"
+
+fulls=("${vols[@]/#/$BTRFS_LOCAL_SNAPSHOTS/}")
+btrbk diff "${fulls[-2]}" "${fulls[-1]}"

@@ -1,0 +1,6 @@
+[Unit]
+Description=daily backup service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/btrfs-setup/btrfs-backup-bigdata-daily.sh

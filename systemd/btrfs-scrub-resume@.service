@@ -1,0 +1,14 @@
+[Unit]
+Description=Btrfs scrub resume on %f
+After=btrfs-balance@%i.service
+Before=btrfs-scrub@%i.service
+
+[Service]
+Nice=19
+#IOSchedulingClass=idle
+ExecStart=/usr/lib/btrfs-setup/btrfs-scrub-resume.sh %f
+Type=oneshot
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
