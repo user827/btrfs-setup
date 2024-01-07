@@ -1,14 +1,14 @@
 # Maintainer: me
 
 pkgname=btrfs-setup
-pkgver=1.0.0.r1.g58f7084
+pkgver=1.0.0.r1.g35659d8
 pkgrel=1
 pkgdesc='Btrfs backups and scrubs'
 license=('Apache')
 url="https://github.com/user827/$pkgname.git"
 arch=('any')
 depends=(btrfs-progs shlib btrbk)
-optdepends=(smtp-server smtp-forwarder)
+optdepends=(smtp-forwarder)
 backup=('etc/big_backup.conf' 'etc/btrbk/btrbk.conf')
 source=("$pkgname::git+file://$PWD?signed")
 validpgpkeys=(D47AF080A89B17BA083053B68DFE60B7327D52D6) # user827
