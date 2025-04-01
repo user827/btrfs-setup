@@ -14,8 +14,8 @@ getdevs() {
   mountdev=$(findmnt -nvo SOURCE --target "$path" | grep -v '^systemd-')
   if [ -h "$mountdev" ]; then
     mountdev=$(readlink "$mountdev")
-    mountdev=${mountdev##*/}
   fi
+  mountdev=${mountdev##*/}
 
   # shhh!
   for dev in /sys/fs/btrfs/*/devices/*; do
