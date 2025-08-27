@@ -19,6 +19,13 @@ makepkg --install --syncdeps
 - systemctl enable --now backup-hourly@<group>.timer
 - Also enable and start btrfs-scrub@.timer, -resume and -balance service.
 
+The following paths inside home should be in separate subvolumes to prevent their
+backup:
+- repobig
+- .local/share/Steam
+- Videos
+- builds
+
 # Setup snapshots and indexing without backups
 - Configure `/etc/big_backup.conf`.
 - Make .snapshots directory be pruned by mlocate.
