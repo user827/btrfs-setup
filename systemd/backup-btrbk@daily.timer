@@ -1,8 +1,8 @@
 [Unit]
-Description=Hourly backup of %I
+Description=Daily backup
 
 [Timer]
-OnCalendar=hourly
+OnCalendar=daily
 Persistent=true
 AccuracySec=1h
 

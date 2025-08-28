@@ -1,9 +1,9 @@
 post_install() {
-  mkdir -pm 0750 /media/remote_backup/_btrbk 0750
+  mkdir -pm 0750 /media/remote_backup/_btrbk
   chown root:users /media/remote_backup/_btrbk
-  mkdir -pm 0750 /media/remote_backup/_btrbk/home 0750
+  mkdir -pm 0750 /media/remote_backup/_btrbk/home
   chown root:users /media/remote_backup/_btrbk/home
-  mkdir -pm 0700 /media/remote_backup/_btrbk/root 0700
+  mkdir -pm 0700 /media/remote_backup/_btrbk/root
   chown root: /media/remote_backup/_btrbk/root
 
   systemctl daemon-reload
